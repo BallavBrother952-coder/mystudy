@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 10 Board Exam Batch | MyStudy</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">MyStudy</div>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="class10.html">Class 10</a>
+    <a href="#" id="authBtn">Login</a>
+  </nav>
+</header>
+
+<!-- BATCH INFO -->
+<section class="hero">
+  <h1>Class 10 – Board Exam Batch</h1>
+  <p>Complete syllabus • Chapter-wise videos • Notes • Tests</p>
+</section>
+
+<!-- SUBJECT LIST -->
+<section class="classes">
+  <h2>Subjects in this Batch</h2>
+
+  <div class="class-box">
+    <a href="math10.html" class="card">Mathematics</a>
+    <a href="physics10.html" class="card">Physics</a>
+    <a href="chemistry10.html" class="card">Chemistry</a>
+    <a href="biology10.html" class="card">Biology</a>
+    <a href="history10.html" class="card">History</a>
+    <a href="geography10.html" class="card">Geography</a>
+    <a href="bengali10.html" class="card">Bengali</a>
+  </div>
+</section>
+
+<!-- LOGIN / LOGOUT SCRIPT -->
+<script>
+window.onload = function() {
+  const authBtn = document.getElementById("authBtn");
+
+  if (localStorage.getItem("loggedIn") === "yes") {
+    authBtn.innerText = "Logout";
+    authBtn.onclick = function() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    };
+  } else {
+    authBtn.innerText = "Login";
+    authBtn.onclick = function() {
+      window.location.href = "login.html";
+    };
+  }
+};
+</script>
+
+</body>
+</html>

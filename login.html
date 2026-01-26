@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login | MyStudy</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">MyStudy</div>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="#classes">Classes</a>
+    <a href="#courses">Courses</a>
+    <a href="#" id="authBtn">Login</a>
+  </nav>
+</header>
+
+<!-- LOGIN FORM -->
+<section class="subject">
+  <h2>Student Login</h2>
+
+  <input type="text" id="username" placeholder="Enter username" required><br>
+  <input type="password" id="password" placeholder="Enter password" required><br>
+
+  <button onclick="login()">Login</button>
+
+  <p id="msg" style="color:red; margin-top:10px;"></p>
+</section>
+
+<!-- LOGIN SCRIPT -->
+<script>
+function login() {
+  const user = document.getElementById("username").value.trim();
+  const pass = document.getElementById("password").value.trim();
+
+  if(user === "student" && pass === "1234") {
+    localStorage.setItem("loggedIn", "yes");
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("msg").innerText = "Invalid login!";
+  }
+}
+</script>
+
+<!-- HEADER LOGIN/LOGOUT DYNAMIC SCRIPT -->
+<script>
+window.onload = function() {
+  const authBtn = document.getElementById("authBtn");
+
+  if (localStorage.getItem("loggedIn") === "yes") {
+    authBtn.innerText = "Logout";
+    authBtn.onclick = function() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+  } else {
+    authBtn.innerText = "Login";
+    authBtn.onclick = function() {
+      window.location.href = "login.html";
+    }
+  }
+};
+</script>
+
+</body>
+</html>

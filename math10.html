@@ -1,0 +1,170 @@
+  <!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Class 10 Mathematics | MyStudy</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">MyStudy</div>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="#classes">Classes</a>
+    <a href="#courses">Courses</a>
+    <a href="#" id="authBtn">Login</a>
+  </nav>
+</header>
+
+<section class="subject">
+  <h2>Class 10 – Mathematics</h2>
+    <div class="class-box">
+    <a href="math10_ch1.html" class="card">Chapter 1: Real Numbers</a>
+    <a href="math10_ch2.html" class="card">Chapter 2: Simple Interes</a>
+    <a href="math10_ch3.html" class="card">Chapter 3: Theorems related to Circle</a>
+    <a href="math10_ch4.html" class="card">Chapter 4: Comming soon</a>
+    <a href="math10_ch5.html" class="card">Chapter 5: comming soon</a>  -->
+    <!-- Add more chapters -->
+<!-- </div> -->
+
+  <!-- [<div class="tabs">
+    <button onclick="showTab('video')">Videos</button>
+    <button onclick="showTab('notes')">Notes</button>
+    <button onclick="showTab('test')">Tests</button>
+  </div> -->
+
+  <!-- <div id="video" class="tab-content"></div>
+  <div id="notes" class="tab-content" style="display:none"></div>
+  <div id="test" class="tab-content" style="display:none"></div>] -->
+<!-- </section>
+
+<script>
+window.onload = function() {
+  const authBtn = document.getElementById("authBtn");
+  const loggedIn = localStorage.getItem("loggedIn") === "yes";
+
+  if(loggedIn){
+    authBtn.innerText = "Logout";
+    authBtn.onclick = function(){
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    };
+
+    document.getElementById("video").innerHTML = `
+      <h3>Lecture 1: Real Numbers</h3>
+      <iframe width="100%" height="450" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+    `;
+    document.getElementById("notes").innerHTML = `
+      <h3>Download Notes</h3>
+      <a href="notes/math10.pdf" class="note-btn">📄 Download PDF</a>
+    `;
+    document.getElementById("test").innerHTML = `
+      <h3>Chapter Test</h3>
+      <button class="test-btn">Start Test</button>
+    `;
+  } else {
+    document.getElementById("video").innerHTML = "<p style='color:red'>Please login to access videos.</p>";
+    document.getElementById("notes").innerHTML = "<p style='color:red'>Please login to access notes.</p>";
+    document.getElementById("test").innerHTML = "<p style='color:red'>Please login to access tests.</p>";
+  }
+};
+
+function showTab(tabId){
+  document.querySelectorAll('.tab-content').forEach(tab => tab.style.display='none');
+  document.getElementById(tabId).style.display='block';
+
+  document.querySelectorAll('.tabs button').forEach(btn => {
+    btn.style.backgroundColor = '#5a2dff';
+    btn.style.color = 'white';
+  });
+
+  const activeBtn = document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`);
+  if(activeBtn){
+    activeBtn.style.backgroundColor = '#4a23cc';
+    activeBtn.style.color = 'white';
+  }
+}
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 10 Mathematics | Foundation Batch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">MyStudy</div>
+  <nav class="menu">
+    <a href="batch10_foundation.html">Foundation Batch</a>
+    <a href="#" id="authBtn">Login</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Class 10 – Mathematics</h1>
+  <p>Foundation Batch • Chapter-wise Learning</p>
+</section>
+
+<section class="classes">
+  <h2>Chapters</h2>
+
+  <div class="class-box">
+    <div class="card" onclick="openChapter(1)">Chapter 1: Real Numbers</div>
+    <div class="card" onclick="openChapter(2)">Chapter 2: Polynomials</div>
+    <div class="card" onclick="openChapter(3)">Chapter 3: Linear Equations</div>
+  </div>
+</section>
+
+<section class="subject" id="chapterContent" style="display:none">
+  <h2 id="chapterTitle"></h2>
+
+  <h3>Videos</h3>
+  <ul>
+    <li><a href="#">▶ Lecture 1</a></li>
+    <li><a href="#">▶ Lecture 2</a></li>
+    <li><a href="#">▶ Lecture 3</a></li>
+  </ul>
+
+  <br>
+
+  <a href="#" class="note-btn">📄 Download Notes</a>
+  <br><br>
+  <button class="test-btn">Start Test</button>
+</section>
+
+<script>
+function openChapter(ch) {
+  document.getElementById("chapterContent").style.display = "block";
+
+  const titles = {
+    1: "Chapter 1: Real Numbers",
+    2: "Chapter 2: Polynomials",
+    3: "Chapter 3: Linear Equations"
+  };
+
+  document.getElementById("chapterTitle").innerText = titles[ch];
+}
+
+// login
+const authBtn = document.getElementById("authBtn");
+if (localStorage.getItem("loggedIn") === "yes") {
+  authBtn.innerText = "Logout";
+  authBtn.onclick = () => {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+  };
+} else {
+  authBtn.innerText = "Login";
+  authBtn.onclick = () => window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
