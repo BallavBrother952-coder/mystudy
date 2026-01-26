@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Study Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+  <div class="logo">MyStudy</div>
+
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="#classes">Classes</a>
+    <a href="#courses">Courses</a>
+    <a href="#" id="authBtn">Login</a>
+  </nav>
+</header>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Learn Anytime, Anywhere</h1>
+    <p>Classes 6 to 12 | Videos | Notes | Tests</p>
+    <button>Start Learning</button>
+  </section>
+
+  <!-- CLASSES SECTION -->
+  <section class="classes">
+    <h2>Choose Your Class</h2>
+
+    <div class="class-box">
+      <div class="card">Class 6</div>
+      <div class="card">Class 7</div>
+      <div class="card">Class 8</div>
+      <div class="card">Class 9</div>
+      <a href="class10.html" class="card">Class 10</a>
+      <div class="card">Class 11</div>
+      <div class="card">Class 12</div>
+    </div>
+  </section>
+<script>
+function logout() {
+  localStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+}
+</script>
+
+<script>
+const authBtn = document.getElementById("authBtn");
+
+if (localStorage.getItem("loggedIn") === "yes") {
+  authBtn.innerText = "Logout";
+  authBtn.onclick = logout;
+} else {
+  authBtn.innerText = "Login";
+  authBtn.onclick = () => {
+    window.location.href = "login.html";
+  };
+}
+</script>
+
+</body>
+</html>
