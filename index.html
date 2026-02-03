@@ -1,63 +1,154 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Physics World</title>
+  <title>Physics World | Home</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808); /* flag colors gradient */
+      color: white;
+      font-weight: bold;
+      border-bottom: 3px solid #555;
+    }
+    .logo { font-size: 24px; color: #fff; }
+    .menu a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+    .menu a:hover { text-decoration: underline; }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(45deg, #FFB347, #FFCC33, #33CCFF, #33FF99);
+      color: #fff;
+      border-radius: 0 0 50% 50% / 20%;
+    }
+    .hero h1 { font-size: 48px; font-weight: bold; }
+    .hero p { font-size: 20px; margin: 15px 0; }
+    .hero button {
+      padding: 15px 30px;
+      background-color: #FF9933;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+    .hero button:hover {
+      background-color: #138808;
+      transform: scale(1.1);
+    }
+
+    /* CLASSES SECTION */
+    .classes {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #FF9999, #99CCFF);
+    }
+    .classes h2 { font-size: 36px; color: #fff; margin-bottom: 40px; text-shadow: 1px 1px 3px #333; }
+
+    .class-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+    .class-box .card {
+      padding: 30px;
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      width: 150px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    /* colorful cards */
+    .class-box .card:nth-child(1) { background-color: #FF9933; }
+    .class-box .card:nth-child(2) { background-color: #138808; }
+    .class-box .card:nth-child(3) { background-color: #FF3300; }
+    .class-box .card:nth-child(4) { background-color: #33CCFF; }
+    .class-box .card:nth-child(5) { background-color: #FFCC00; }
+    .class-box .card:nth-child(6) { background-color: #FF66CC; }
+    .class-box .card:nth-child(7) { background-color: #33FF99; }
+    .class-box .card:nth-child(8) { background-color: #5803f6; }
+
+    .class-box .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* RESPONSIVE */
+    @media screen and (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 16px; }
+      .class-box { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
+<!-- HEADER -->
+<header class="header">
   <div class="logo">Physics World</div>
-
   <nav class="menu">
-    <a href="index.html">Home</a>
     <a href="#classes">Classes</a>
     <a href="#courses">Courses</a>
     <a href="#" id="authBtn">Login</a>
   </nav>
 </header>
 
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Learn Anytime, Anywhere</h1>
+  <p>Classes 5 to 12 | Videos | Notes | Tests</p>
+  <button onclick="window.location.href='#classes'">Start Learning</button>
+</section>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Learn Anytime, Anywhere</h1>
-    <p>Classes 6 to 12 | Videos | Notes | Tests</p>
-    <button>Start Learning</button>
-  </section>
-
-  <!-- CLASSES SECTION -->
-  <section class="classes">
-    <h2>Choose Your Class</h2>
-
-    <div class="class-box">
-      <div class="card">Class 6</div>
-      <div class="card">Class 7</div>
-      <div class="card">Class 8</div>
-      <div class="card">Class 9</div>
-      <a href="class10.html" class="card">Class 10</a>
-      <div class="card">Class 11</div>
-      <div class="card">Class 12</div>
-    </div>
-  </section>
-<script>
-function logout() {
-  localStorage.removeItem("loggedIn");
-  window.location.href = "login.html";
-}
-</script>
+<!-- CLASSES SECTION -->
+<section class="classes" id="classes">
+  <h2>Choose Your Class</h2>
+  <div class="class-box">
+    <a href="class5.html" class="card">Class 5</a>
+    <a href="class6.html" class="card">Class 6</a>
+    <a href="class7.html" class="card">Class 7</a>
+    <a href="class8.html" class="card">Class 8</a>
+    <a href="class9.html" class="card">Class 9</a>
+    <a href="class10.html" class="card">Class 10</a>
+    <a href="class11.html" class="card">Class 11</a>
+    <a href="class12.html" class="card">Class 12</a>
+</section>
 
 <script>
+// LOGIN / LOGOUT
 const authBtn = document.getElementById("authBtn");
-
 if (localStorage.getItem("loggedIn") === "yes") {
   authBtn.innerText = "Logout";
-  authBtn.onclick = logout;
-} else {
-  authBtn.innerText = "Login";
   authBtn.onclick = () => {
+    localStorage.removeItem("loggedIn");
     window.location.href = "login.html";
   };
+} else {
+  authBtn.innerText = "Login";
+  authBtn.onclick = () => window.location.href = "login.html";
 }
 </script>
 

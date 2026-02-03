@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 12 | Physics World</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .batch-box{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+    .batch-box .card{
+      width:220px;
+      padding:25px;
+      border-radius:12px;
+      background:white;
+      font-weight:bold;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:0 4px 15px rgba(0,0,0,.15);
+      transition:.3s;
+    }
+    .batch-box .card:hover{
+      background:#138808;
+      color:white;
+      transform:translateY(-5px);
+    }
+
+    .tabs button{
+      padding:10px 20px;
+      margin:5px;
+      border:none;
+      cursor:pointer;
+      background:#5a2dff;
+      color:white;
+      border-radius:6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">Physics World</div>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="#batches">Batches</a>
+    <a href="#" id="authBtn">Login</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Class 12 – Physics World</h1>
+  <p>Board | JEE | NEET | Advanced</p>
+</section>
+
+<section id="batches">
+  <h2 style="text-align:center">Select Your Batch</h2>
+
+  <div class="batch-box">
+    <div class="card" onclick="openBatch('board')">Board Batch</div>
+    <div class="card" onclick="openBatch('foundation')">Foundation Batch</div>
+    <div class="card" onclick="openBatch('entrance')">JEE / NEET Batch</div>
+  </div>
+</section>
+
+<section id="batchContent" style="display:none;padding:30px">
+  <h2 id="batchTitle"></h2>
+
+  <div class="class-box" id="chapterList"></div>
+
+  <div id="chapterTabs" style="display:none">
+    <div class="tabs">
+      <button onclick="showTab('video')">Videos</button>
+      <button onclick="showTab('notes')">Notes</button>
+      <button onclick="showTab('test')">Tests</button>
+    </div>
+
+    <div id="video" class="tab-content"></div>
+    <div id="notes" class="tab-content" style="display:none"></div>
+    <div id="test" class="tab-content" style="display:none"></div>
+  </div>
+</section>
+
+<script>
+const authBtn=document.getElementById("authBtn");
+authBtn.innerText=localStorage.getItem("loggedIn")==="yes"?"Logout":"Login";
+authBtn.onclick=()=>{
+  if(localStorage.getItem("loggedIn")==="yes"){
+    localStorage.removeItem("loggedIn");
+  }
+  window.location.href="login.html";
+};
+
+const batches={
+  board:{
+    title:"Class 12 – Board Batch",
+    chapters:[
+      {title:"Physics: Electrostatics",videos:["Part 1","Part 2"],notes:"#"},
+      {title:"Chemistry: Solid State",videos:["One Shot"],notes:"#"},
+      {title:"Maths: Relations & Functions",videos:["Basics"],notes:"#"}
+    ]
+  },
+  foundation:{
+    title:"Class 12 – Foundation Batch",
+    chapters:[
+      {title:"Physics: Electrostatics (Advanced)",videos:["Numericals"],notes:"#"},
+      {title:"Chemistry: Solutions",videos:["Practice"],notes:"#"}
+    ]
+  },
+  entrance:{
+    title:"Class 12 – JEE / NEET Batch",
+    chapters:[
+      {title:"Physics: Electrostatics (One Shot)",videos:["Revision"],notes:"#"},
+      {title:"Chemistry: Solid State (MCQ)",videos:["MCQs"],notes:"#"}
+    ]
+  }
+};
+
+function openBatch(key){
+  const batch=batches[key];
+  document.getElementById("batchContent").style.display="block";
+  document.getElementById("batchTitle").innerText=batch.title;
+
+  const list=document.getElementById("chapterList");
+  list.innerHTML="";
+  batch.chapters.forEach((ch,i)=>{
+    const div=document.createElement("div");
+    div.className="card";
+    div.innerText=ch.title;
+    div.onclick=()=>openChapter(key,i);
+    list.appendChild(div);
+  });
+}
+
+function openChapter(b,i){
+  const ch=batches[b].chapters[i];
+  document.getElementById("chapterTabs").style.display="block";
+  document.getElementById("video").innerHTML=ch.videos.join("<br>");
+  document.getElementById("notes").innerHTML=`<a href="${ch.notes}">Download Notes</a>`;
+  document.getElementById("test").innerHTML=`<button onclick="alert('Test Started')">Start Test</button>`;
+  showTab("video");
+}
+
+function showTab(id){
+  document.querySelectorAll(".tab-content").forEach(t=>t.style.display="none");
+  document.getElementById(id).style.display="block";
+}
+</script>
+
+</body>
+</html>
