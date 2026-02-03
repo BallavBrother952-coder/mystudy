@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Class 10 physics | MyStudy</title>
+  <title>Class 10 Physics | Physics World</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="logo">MyStudy</div>
+  <div class="logo">Physics World</div>
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="#classes">Classes</a>
@@ -17,25 +18,30 @@
   </nav>
 </header>
 
+<!-- SUBJECT SECTION -->
 <section class="subject">
-  <h2>Class 10 – physics</h2>
+  <h2>Class 10 – Physics</h2>
 
+  <!-- TABS -->
   <div class="tabs">
     <button onclick="showTab('video')">Videos</button>
     <button onclick="showTab('notes')">Notes</button>
     <button onclick="showTab('test')">Tests</button>
   </div>
 
+  <!-- TAB CONTENT -->
   <div id="video" class="tab-content"></div>
   <div id="notes" class="tab-content" style="display:none"></div>
   <div id="test" class="tab-content" style="display:none"></div>
 </section>
 
+<!-- SCRIPT -->
 <script>
 window.onload = function() {
   const authBtn = document.getElementById("authBtn");
   const loggedIn = localStorage.getItem("loggedIn") === "yes";
 
+  // Update login/logout button
   if(loggedIn){
     authBtn.innerText = "Logout";
     authBtn.onclick = function(){
@@ -43,34 +49,42 @@ window.onload = function() {
       window.location.href = "login.html";
     };
 
+    // Load content for logged in users
     document.getElementById("video").innerHTML = `
-      <h3>Lecture 1: Real Numbers</h3>
+      <h3>Lecture 1: Introduction to Physics</h3>
       <iframe width="100%" height="450" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
     `;
     document.getElementById("notes").innerHTML = `
       <h3>Download Notes</h3>
-      <a href="notes/math10.pdf" class="note-btn">📄 Download PDF</a>
+      <a href="notes/physics10.pdf" class="note-btn">📄 Download PDF</a>
     `;
     document.getElementById("test").innerHTML = `
       <h3>Chapter Test</h3>
       <button class="test-btn">Start Test</button>
     `;
   } else {
+    // Message for non-logged in users
     document.getElementById("video").innerHTML = "<p style='color:red'>Please login to access videos.</p>";
     document.getElementById("notes").innerHTML = "<p style='color:red'>Please login to access notes.</p>";
     document.getElementById("test").innerHTML = "<p style='color:red'>Please login to access tests.</p>";
   }
 };
 
+// Function to switch tabs
 function showTab(tabId){
+  // Hide all tab contents
   document.querySelectorAll('.tab-content').forEach(tab => tab.style.display='none');
+
+  // Show selected tab
   document.getElementById(tabId).style.display='block';
 
+  // Reset all tab buttons style
   document.querySelectorAll('.tabs button').forEach(btn => {
     btn.style.backgroundColor = '#5a2dff';
     btn.style.color = 'white';
   });
 
+  // Highlight active button
   const activeBtn = document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`);
   if(activeBtn){
     activeBtn.style.backgroundColor = '#4a23cc';

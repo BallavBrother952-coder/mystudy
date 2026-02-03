@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Class 10 Math - Chapter 3 | MyStudy</title>
+  <title>Class 10 Math - Chapter 3 | Physics World</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <header class="header">
-  <div class="logo">MyStudy</div>
+  <div class="logo">Physics World</div>
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="math10.html">Mathematics Chapters</a>
@@ -43,7 +43,7 @@ window.onload = function() {
     };
 
     document.getElementById("video").innerHTML = `
-      <h3>Lecture 3: Theorems related to Circle </h3>
+      <h3>Lecture 3: Theorems related to Circle</h3>
       <iframe width="100%" height="450" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
     `;
     document.getElementById("notes").innerHTML = `
@@ -64,17 +64,6 @@ window.onload = function() {
 function showTab(tabId){
   document.querySelectorAll('.tab-content').forEach(tab => tab.style.display='none');
   document.getElementById(tabId).style.display='block';
-
-  document.querySelectorAll('.tabs button').forEach(btn => {
-    btn.style.backgroundColor = '#5a2dff';
-    btn.style.color = 'white';
-  });
-
-  const activeBtn = document.querySelector(`.tabs button[onclick="showTab('${tabId}')"]`);
-  if(activeBtn){
-    activeBtn.style.backgroundColor = '#4a23cc';
-    activeBtn.style.color = 'white';
-  }
 }
 </script>
 
