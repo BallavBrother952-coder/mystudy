@@ -1,167 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Class 5 | Physics World</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-    .batch-box{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-      margin-top:30px;
-    }
-    .batch-box .card{
-      width:220px;
-      padding:25px;
-      border-radius:12px;
-      background:white;
-      font-weight:bold;
-      text-align:center;
-      cursor:pointer;
-      box-shadow:0 4px 15px rgba(0,0,0,.15);
-      transition:.3s;
-    }
-    .batch-box .card:hover{
-      background:#138808;
-      color:white;
-      transform:translateY(-5px);
-    }
+<meta charset="UTF-8">
+<title>Class 5 | Physics World</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .tabs button{
-      padding:10px 20px;
-      margin:5px;
-      border:none;
-      cursor:pointer;
-      background:#5a2dff;
-      color:white;
-      border-radius:6px;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:linear-gradient(90deg,#FF9933,#fff,#138808);
+  font-weight:bold;
+}
+.menu a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#000;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(45deg,#FFB347,#FFCC33,#33CCFF,#33FF99);
+  color:#fff;
+}
+
+/* BATCHES */
+.batches{
+  padding:60px 20px;
+  text-align:center;
+  background:#f2f2f2;
+}
+.batch-box{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.batch-card{
+  width:220px;
+  padding:25px;
+  background:#fff;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  transition:.3s;
+}
+.batch-card:hover{
+  background:#138808;
+  color:#fff;
+  transform:scale(1.05);
+}
+</style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <div class="logo">Physics World</div>
+  <div>Physics World</div>
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="#batches">Batches</a>
-    <a href="#courses">Courses</a>
-    <a href="#" id="authBtn">Login</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Class 5 – Welcome to Physics World</h1>
-  <p>Select your batch and start learning!</p>
+  <h1>Class 5</h1>
+  <p>Select your batch and start learning</p>
 </section>
 
-<!-- BATCHES -->
+<!-- BATCH SECTION -->
 <section class="batches" id="batches">
- <h2 style="text-align:center">Select Your Batch</h2>
+  <h2>Select Your Batch</h2>
   <div class="batch-box">
-    <div class="card" onclick="openBatch('board')">Board Exam Batch</div>
-    <div class="card" onclick="openBatch('foundation')">Foundation Batch</div>
-    <div class="card" onclick="openBatch('crash')">Crash Course Batch</div>
-  </div>
-</section>
-
-<!-- CHAPTERS & TABS -->
-<section class="subject" id="batchContent" style="display:none">
-  <h2 id="batchTitle"></h2>
-
-  <!-- Chapters as cards -->
-  <div class="class-box" id="chapterList"></div>
-
-  <!-- Tabs for selected chapter -->
-  <div id="chapterTabs" style="display:none; margin-top:20px;">
-    <div class="tabs">
-      <button onclick="showTab('video')">Videos</button>
-      <button onclick="showTab('notes')">Notes</button>
-      <button onclick="showTab('test')">Tests</button>
+    <div class="batch-card" onclick="openBatch('Board Exam')">
+      Board Exam Batch
     </div>
-
-    <div id="video" class="tab-content"></div>
-    <div id="notes" class="tab-content" style="display:none"></div>
-    <div id="test" class="tab-content" style="display:none"></div>
+    <div class="batch-card" onclick="openBatch('Foundation')">
+      Foundation Batch
+    </div>
+    <div class="batch-card" onclick="openBatch('Crash Course')">
+      Crash Course Batch
+    </div>
   </div>
 </section>
 
 <script>
-// LOGIN / LOGOUT
-const authBtn = document.getElementById("authBtn");
-if (localStorage.getItem("loggedIn") === "yes") {
-  authBtn.innerText = "Logout";
-  authBtn.onclick = () => {
-    localStorage.removeItem("loggedIn");
-    window.location.href = "login.html";
-  };
-} else {
-  authBtn.innerText = "Login";
-  authBtn.onclick = () => window.location.href = "login.html";
-}
-
-// BATCH DATA
-const batches={
-  board:{
-    title:"Class 5 – School / Board Batch",
-    chapters:[
-      {title:"Maths: Numbers",videos:["Video 1","Video 2"],notes:"#"},
-      {title:"EVS: Our Environment",videos:["Video"],notes:"#"},
-      {title:"Science: Human Body",videos:["Video"],notes:"#"}
-    ]
-  },
-  foundation:{
-    title:"Class 5 – Foundation Batch",
-    chapters:[
-      {title:"Maths: Mental Maths",videos:["Practice Video"],notes:"#"},
-      {title:"Science: Fun Experiments",videos:["Demo Video"],notes:"#"}
-    ]
-  }
-};
-
-// OPEN BATCH
-function openBatch(batchKey) {
-  const batch = batches[batchKey];
-  document.getElementById("batchContent").style.display = "block";
-  document.getElementById("batchTitle").innerText = batch.title;
-
-  const chapterList = document.getElementById("chapterList");
-  chapterList.innerHTML = "";
-  batch.chapters.forEach((ch, index) => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerText = ch.title;
-    div.onclick = () => openChapter(batchKey,index);
-    chapterList.appendChild(div);
-  });
-
-  document.getElementById("chapterTabs").style.display = "none";
-}
-
-// OPEN CHAPTER
-function openChapter(batchKey, chapterIndex) {
-  const chapter = batches[batchKey].chapters[chapterIndex];
-  document.getElementById("chapterTabs").style.display = "block";
-
-  document.getElementById("video").innerHTML = chapter.videos.map(v => `▶ <a href="#">${v}</a>`).join("<br>");
-  document.getElementById("notes").innerHTML = `<a href="${chapter.notes}" target="_blank" class="note-btn">📄 Download Notes</a>`;
-  document.getElementById("test").innerHTML = `<button class="test-btn" onclick="alert('Starting test for ${chapter.title}')">Start Test</button>`;
-
-  showTab('video');
-}
-
-// SHOW TABS
-function showTab(tabId){
-  document.querySelectorAll('.tab-content').forEach(tab => tab.style.display='none');
-  document.getElementById(tabId).style.display='block';
-  document.querySelectorAll('.tabs button').forEach(btn => btn.style.backgroundColor='#5a2dff');
-  document.querySelectorAll('.tabs button').forEach(btn => btn.style.color='white');
-  const activeBtn = Array.from(document.querySelectorAll('.tabs button')).find(b => b.innerText.toLowerCase() === tabId);
-  if(activeBtn) activeBtn.style.backgroundColor='#4a23cc';
+function openBatch(batchName){
+  window.location.href =
+    "class5-subjects.html?batch=" + encodeURIComponent(batchName);
 }
 </script>
 

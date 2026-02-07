@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 11 Subjects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{font-family:Arial;margin:0;background:#f4f6f8}
+    header{background:#5a2dff;color:white;padding:20px;text-align:center}
+    .box{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:30px}
+    .card{
+      width:260px;padding:20px;background:white;border-radius:12px;
+      text-align:center;font-weight:bold;
+      box-shadow:0 4px 15px rgba(0,0,0,.15)
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="title">Subjects</h1>
+</header>
+
+<div class="box" id="subjectBox"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const stream = params.get("stream");
+const batch = params.get("batch");
+
+const subjects = {
+  science: ["Physics","Chemistry","Mathematics","Biology","English","Bengali"],
+  arts: ["History","Geography","Political Science","English","Bengali"],
+  commerce: ["Accountancy","Business Studies","Economics","English","Bengali"]
+};
+
+document.getElementById("title").innerText =
+  "Class 11 – " + batch;
+
+const box = document.getElementById("subjectBox");
+
+subjects[stream].forEach(sub=>{
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerText = sub;
+  box.appendChild(div);
+});
+</script>
+
+</body>
+</html>

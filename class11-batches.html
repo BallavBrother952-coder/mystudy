@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 11 Batches</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{font-family:Arial;margin:0;background:#f4f6f8}
+    header{background:#5a2dff;color:white;padding:20px;text-align:center}
+    .box{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:30px}
+    .card{
+      width:280px;padding:25px;background:white;border-radius:12px;
+      text-align:center;font-weight:bold;cursor:pointer;
+      box-shadow:0 4px 15px rgba(0,0,0,.15);transition:.3s
+    }
+    .card:hover{background:#138808;color:white;transform:translateY(-5px)}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="title">Class 11 Batches</h1>
+</header>
+
+<div class="box" id="batchBox"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const stream = params.get("stream");
+
+const batches = {
+  science: ["Foundation Batch","Advanced Batch","JEE / NEET Target Batch"],
+  arts: ["General Studies Batch","Honours Batch","Board Focus Batch"],
+  commerce: ["Foundation Commerce Batch","Accounts Focus Batch","Board + CUET Batch"]
+};
+
+const box = document.getElementById("batchBox");
+const title = document.getElementById("title");
+
+title.innerText = "Class 11 – " + stream.toUpperCase();
+
+batches[stream].forEach(batch=>{
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerText = batch;
+  div.onclick = () => {
+    window.location.href =
+      "class11-subjects.html?stream=" + stream +
+      "&batch=" + encodeURIComponent(batch);
+  };
+  box.appendChild(div);
+});
+</script>
+
+</body>
+</html>

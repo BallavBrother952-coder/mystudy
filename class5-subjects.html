@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class 5 Subjects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f2f2;
+}
+
+.header{
+  padding:15px 40px;
+  background:linear-gradient(90deg,#FF9933,#fff,#138808);
+  font-weight:bold;
+}
+
+.subjects{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.subject-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.subject-card{
+  padding:25px;
+  background:#FF9933;
+  color:#fff;
+  font-weight:bold;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.subject-card:hover{
+  background:#138808;
+  transform:scale(1.08);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">Physics World</div>
+
+<section class="subjects">
+  <h1 id="pageTitle"></h1>
+
+  <div class="subject-box">
+    <div class="subject-card">Amader Paribesh V</div>
+    <div class="subject-card">Amar Ganit V</div>
+    <div class="subject-card">Bhasapath V</div>
+    <div class="subject-card">Butterfly V</div>
+    <div class="subject-card">Patabhar V</div>
+  </div>
+</section>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const batch = params.get("batch");
+
+document.getElementById("pageTitle").innerText =
+  "Class 5 – " + batch + " Batch Subjects";
+</script>
+
+</body>
+</html>

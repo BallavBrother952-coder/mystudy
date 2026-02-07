@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Class 9 | Physics World</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
     .batch-box{
       display:flex;
       justify-content:center;
@@ -12,8 +14,9 @@
       flex-wrap:wrap;
       margin-top:30px;
     }
+
     .batch-box .card{
-      width:220px;
+      width:240px;
       padding:25px;
       border-radius:12px;
       background:white;
@@ -23,23 +26,15 @@
       box-shadow:0 4px 15px rgba(0,0,0,.15);
       transition:.3s;
     }
+
     .batch-box .card:hover{
       background:#138808;
       color:white;
       transform:translateY(-5px);
     }
-
-    .tabs button{
-      padding:10px 20px;
-      margin:5px;
-      border:none;
-      cursor:pointer;
-      background:#5a2dff;
-      color:white;
-      border-radius:6px;
-    }
   </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -48,7 +43,6 @@
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="#batches">Batches</a>
-    <a href="#courses">Courses</a>
     <a href="#" id="authBtn">Login</a>
   </nav>
 </header>
@@ -56,43 +50,32 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Class 9 – Welcome to Physics World</h1>
-  <p>Select your batch and start learning!</p>
+  <p>Select your batch to continue</p>
 </section>
 
 <!-- BATCHES -->
 <section class="batches" id="batches">
   <h2 style="text-align:center">Select Your Batch</h2>
+
   <div class="batch-box">
-    <div class="card" onclick="openBatch('board')">Board Exam Batch</div>
-    <div class="card" onclick="openBatch('foundation')">Foundation Batch</div>
-    <div class="card" onclick="openBatch('crash')">Crash Course Batch</div>
-  </div>
-</section>
-
-<!-- CHAPTERS & TABS -->
-<section class="subject" id="batchContent" style="display:none">
-  <h2 id="batchTitle"></h2>
-
-  <!-- Chapters as cards -->
-  <div class="class-box" id="chapterList"></div>
-
-  <!-- Tabs for selected chapter -->
-  <div id="chapterTabs" style="display:none; margin-top:20px;">
-    <div class="tabs">
-      <button onclick="showTab('video')">Videos</button>
-      <button onclick="showTab('notes')">Notes</button>
-      <button onclick="showTab('test')">Tests</button>
+    <div class="card" onclick="openBatch('Board Exam Batch')">
+      Board Exam Batch
     </div>
 
-    <div id="video" class="tab-content"></div>
-    <div id="notes" class="tab-content" style="display:none"></div>
-    <div id="test" class="tab-content" style="display:none"></div>
+    <div class="card" onclick="openBatch('Foundation Batch')">
+      Foundation Batch
+    </div>
+
+    <div class="card" onclick="openBatch('Crash Course Batch')">
+      Crash Course Batch
+    </div>
   </div>
 </section>
 
 <script>
 // LOGIN / LOGOUT
 const authBtn = document.getElementById("authBtn");
+
 if (localStorage.getItem("loggedIn") === "yes") {
   authBtn.innerText = "Logout";
   authBtn.onclick = () => {
@@ -104,103 +87,10 @@ if (localStorage.getItem("loggedIn") === "yes") {
   authBtn.onclick = () => window.location.href = "login.html";
 }
 
-// BATCH DATA
-const batches = {
-  board: {
-    title: "Class 9 – Board Exam Batch",
-    chapters: [
-      {
-        title: "Chapter 1: Number Systems",
-        videos: ["Real Numbers – Part 1", "Real Numbers – Part 2"],
-        notes: "notes/class9_board_ch1.pdf",
-        test: true
-      },
-      {
-        title: "Chapter 2: Polynomials",
-        videos: ["Polynomials – Part 1", "Polynomials – Part 2"],
-        notes: "notes/class9_board_ch2.pdf",
-        test: true
-      }
-    ]
-  },
-
-  foundation: {
-    title: "Class 9 – Foundation Batch",
-    chapters: [
-      {
-        title: "Chapter 1: Number Systems",
-        videos: ["Advanced Real Numbers", "Practice Problems"],
-        notes: "notes/class9_foundation_ch1.pdf",
-        test: true
-      },
-      {
-        title: "Chapter 2: Polynomials",
-        videos: ["Concept Booster", "MCQ Practice"],
-        notes: "notes/class9_foundation_ch2.pdf",
-        test: true
-      }
-    ]
-  },
-
-  crash: {
-    title: "Class 9 – Crash Course",
-    chapters: [
-      {
-        title: "Chapter 1: Number Systems (Quick)",
-        videos: ["One-Shot Revision"],
-        notes: "notes/class9_crash_ch1.pdf",
-        test: true
-      },
-      {
-        title: "Chapter 2: Polynomials (Quick)",
-        videos: ["One-Shot Revision"],
-        notes: "notes/class9_crash_ch2.pdf",
-        test: true
-      }
-    ]
-  }
-};
-
-
-// OPEN BATCH
-function openBatch(batchKey) {
-  const batch = batches[batchKey];
-  document.getElementById("batchContent").style.display = "block";
-  document.getElementById("batchTitle").innerText = batch.title;
-
-  const chapterList = document.getElementById("chapterList");
-  chapterList.innerHTML = "";
-  batch.chapters.forEach((ch, index) => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerText = ch.title;
-    div.onclick = () => openChapter(batchKey,index);
-    chapterList.appendChild(div);
-  });
-
-  document.getElementById("chapterTabs").style.display = "none";
-}
-
-// OPEN CHAPTER
-function openChapter(batchKey, chapterIndex) {
-  const chapter = batches[batchKey].chapters[chapterIndex];
-  document.getElementById("chapterTabs").style.display = "block";
-
-  document.getElementById("video").innerHTML = chapter.videos.map(v => `▶ <a href="#">${v}</a>`).join("<br>");
-  document.getElementById("notes").innerHTML = `<a href="${chapter.notes}" target="_blank" class="note-btn">📄 Download Notes</a>`;
-  document.getElementById("test").innerHTML = `<button class="test-btn" onclick="alert('Starting test for ${chapter.title}')">Start Test</button>`;
-
-  showTab('video');
-}
-
-// SHOW TABS
-function showTab(tabId){
-  document.querySelectorAll('.tab-content').forEach(tab => tab.style.display='none');
-  document.getElementById(tabId).style.display='block';
-  document.querySelectorAll('.tabs button').forEach(btn => btn.style.backgroundColor='#5a2dff');
-  document.querySelectorAll('.tabs button').forEach(btn => btn.style.color='white');
-  const activeBtn = Array.from(document.querySelectorAll('.tabs button')).find(b => b.innerText.toLowerCase() === tabId);
-  if(activeBtn) activeBtn.style.backgroundColor='#4a23cc';
+// OPEN BATCH → SUBJECT PAGE
+function openBatch(batchName) {
+  window.location.href =
+    `class9-subjects.html?batch=${encodeURIComponent(batchName)}`;
 }
 </script>
 
