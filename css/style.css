@@ -1,0 +1,981 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f9fc;
+    color: #222;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #ddd;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a2dff;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: #5a2dff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background: #f4f6ff;
+}
+
+.hero h1 {
+    font-size: 38px;
+    color: #222;
+}
+
+.hero p {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #666;
+}
+
+
+/* =========================================
+   CLASSES SECTION
+========================================= */
+
+.classes {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px 20px;
+
+    text-align: center;
+}
+
+.classes h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.classes h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.classes p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CLASS BOX
+========================================= */
+
+.class-box {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 18px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   COMMON CARD
+========================================= */
+
+.card {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+
+    color: #333;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: #5a2dff;
+
+    color: #5a2dff;
+
+    box-shadow: 0 6px 18px rgba(90,45,255,0.15);
+}
+
+
+/* =========================================
+   GNM SUBJECT / RESOURCE TABS
+========================================= */
+
+.tabs {
+    display: flex;
+
+    gap: 15px;
+
+    margin: 25px auto;
+
+    max-width: 700px;
+}
+
+.tabs button {
+    flex: 1;
+
+    padding: 15px 20px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    border-color: #5a2dff;
+
+    color: #5a2dff;
+}
+
+.tabs button.active {
+    background: #5a2dff;
+
+    color: #ffffff;
+
+    border-color: #5a2dff;
+}
+
+
+/* =========================================
+   SUBJECT / RESOURCE LIST
+========================================= */
+
+.subject-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 16px;
+
+    max-width: 900px;
+
+    margin: 20px auto;
+}
+
+.subject-list .card {
+    min-height: 110px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* =========================================
+   SUBJECT PAGE
+========================================= */
+
+.chapter-page {
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    padding: 20px;
+}
+
+
+/* =========================================
+   SUBJECT HEADER
+========================================= */
+
+.subject-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.subject-header h1 {
+    font-size: 28px;
+}
+
+.subject-header p {
+    margin-top: 8px;
+
+    color: #777;
+}
+
+.course-count {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #555;
+}
+
+
+/* =========================================
+   CHAPTER TABS
+========================================= */
+
+.chapter-tabs {
+    display: flex;
+
+    gap: 30px;
+
+    border-bottom: 1px solid #ddd;
+
+    margin-bottom: 20px;
+}
+
+.chapter-tab {
+    background: none;
+
+    border: none;
+
+    padding: 12px 5px;
+
+    font-size: 16px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+.chapter-tab.active {
+    color: #5a2dff;
+
+    font-weight: 600;
+
+    border-bottom: 2px solid #5a2dff;
+}
+
+
+/* =========================================
+   CHAPTER LIST
+========================================= */
+
+.chapter-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   CHAPTER CARD
+========================================= */
+
+.chapter-card {
+    position: relative;
+
+    display: block;
+
+    padding: 24px 55px 24px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    transition: 0.3s;
+}
+
+.chapter-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #5a2dff;
+
+    box-shadow:
+        0 5px 15px rgba(90,45,255,0.10);
+}
+
+.chapter-number {
+    color: #5a2dff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.chapter-title {
+    color: #222;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.chapter-info {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.chapter-arrow {
+    position: absolute;
+
+    right: 22px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 30px;
+
+    color: #777;
+}
+
+
+/* =========================================
+   STUDY MATERIAL
+========================================= */
+
+.study-material-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.study-material-card {
+    position: relative;
+
+    display: block;
+
+    padding: 24px 55px 24px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.study-material-number {
+    color: #5a2dff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.study-material-title {
+    color: #222;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.study-material-info {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.study-material-arrow {
+    position: absolute;
+
+    right: 22px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 30px;
+
+    color: #777;
+}
+
+
+/* =========================================
+   CHAPTER CONTENT PAGE
+========================================= */
+
+.chapter-header {
+    background: #f4f6ff;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    margin-bottom: 25px;
+}
+
+.chapter-subject {
+    color: #5a2dff;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.chapter-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+}
+
+.chapter-batch {
+    color: #777;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   CONTENT TABS
+========================================= */
+
+.content-tabs {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    border-bottom: 1px solid #ddd;
+
+    margin-bottom: 25px;
+}
+
+.content-tab {
+    flex-shrink: 0;
+
+    padding: 13px 18px;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 3px solid transparent;
+
+    color: #666;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.content-tab:hover {
+    color: #5a2dff;
+}
+
+.content-tab.active {
+    color: #5a2dff;
+
+    border-bottom-color: #5a2dff;
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.content-section.active {
+    display: flex;
+}
+
+
+/* =========================================
+   LECTURE CARD
+========================================= */
+
+.lecture-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.lecture-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 20px;
+}
+
+.lecture-icon {
+    width: 72px;
+
+    height: 72px;
+
+    background: #ffe9e9;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+.lecture-info {
+    flex: 1;
+}
+
+.lecture-meta {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+.lecture-info h2 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 17px;
+}
+
+.lecture-duration {
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.lecture-complete {
+    width: 22px;
+
+    height: 22px;
+
+    background: #35c97a;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   LECTURE BUTTONS
+========================================= */
+
+.lecture-actions {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 0 20px 16px 100px;
+}
+
+.lecture-action {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 155px;
+
+    padding: 12px 18px;
+
+    background: #f7f7f7;
+
+    color: #222;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.lecture-action:hover {
+    background: #eeeeee;
+}
+
+
+/* =========================================
+   DPP
+========================================= */
+
+.lecture-dpp {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 20px;
+
+    border-top: 1px dashed #ddd;
+}
+
+.dpp-name {
+    color: #a86b00;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.resume-link {
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.resume-link:hover {
+    color: #5a2dff;
+}
+
+
+/* =========================================
+   SIMPLE CONTENT CARD
+========================================= */
+
+.simple-content-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.simple-content-card > div {
+    flex: 1;
+}
+
+.simple-content-card strong {
+    font-size: 17px;
+}
+
+.simple-content-card p {
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   WATCH BUTTON
+========================================= */
+
+.watch-button {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: #5a2dff;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.watch-button:hover {
+    background: #4a23cc;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 15px 20px;
+    }
+
+    .menu {
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .classes {
+        padding: 30px 15px;
+    }
+
+    .class-box {
+        grid-template-columns:
+            repeat(auto-fit, minmax(140px, 1fr));
+
+        gap: 12px;
+    }
+
+    .card {
+        min-height: 90px;
+
+        padding: 15px;
+
+        font-size: 14px;
+    }
+
+    .tabs {
+        gap: 10px;
+    }
+
+    .tabs button {
+        padding: 12px 10px;
+
+        font-size: 14px;
+    }
+
+    .subject-list {
+        grid-template-columns:
+            repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .chapter-page {
+        padding: 12px;
+
+        margin: 15px auto;
+    }
+
+    .subject-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .subject-header h1 {
+        font-size: 22px;
+    }
+
+    .chapter-header {
+        padding: 20px;
+    }
+
+    .chapter-header h1 {
+        font-size: 24px;
+    }
+
+    .chapter-card {
+        padding: 20px 45px 20px 18px;
+    }
+
+    .chapter-title {
+        font-size: 17px;
+    }
+
+    .lecture-top {
+        padding: 15px;
+    }
+
+    .lecture-icon {
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 24px;
+    }
+
+    .lecture-info h2 {
+        font-size: 15px;
+    }
+
+    .lecture-actions {
+        padding: 0 15px 15px 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .lecture-action {
+        flex: 1;
+
+        min-width: 120px;
+    }
+
+    .lecture-dpp {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .simple-content-card {
+        flex-wrap: wrap;
+    }
+
+    .watch-button {
+        width: 100%;
+
+        text-align: center;
+    }
+}

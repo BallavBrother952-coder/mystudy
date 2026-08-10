@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="../../../../../css/style.css">
+
+    <title>Life Science - GNM Batch 2027</title>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+        Physics World
+    </div>
+
+    <nav class="menu">
+
+        <a href="../../../../../index.html">
+            Home
+        </a>
+
+        <a href="../index.html">
+            All Classes
+        </a>
+
+        <a href="../../index.html">
+            GNM Batch 2027
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- PAGE -->
+
+<section class="chapter-page">
+
+
+    <!-- SUBJECT HEADER -->
+
+    <div class="subject-header">
+
+        <div>
+
+            <h1>
+                Life Science (Biology)
+            </h1>
+
+            <p>
+                GNM Batch 2027
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TABS -->
+
+    <div class="chapter-tabs">
+
+        <button
+            id="chaptersBtn"
+            class="chapter-tab active"
+            onclick="showChapters()">
+
+            Chapters
+
+        </button>
+
+
+        <button
+            id="studyMaterialBtn"
+            class="chapter-tab"
+            onclick="showStudyMaterial()">
+
+            Study Material
+
+        </button>
+
+    </div>
+
+
+
+    <!-- CHAPTERS -->
+
+    <div
+        id="chaptersSection"
+        class="chapter-list">
+
+
+        <!-- CHAPTER 01 -->
+
+        <a
+            href="chapters/ch-01/index.html"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CHAPTER 01
+            </div>
+
+            <div class="chapter-title">
+                Cell
+            </div>
+
+            <div class="chapter-info">
+                Lectures • DPPs • Notes • Videos
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- CHAPTER 02 -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CHAPTER 02
+            </div>
+
+            <div class="chapter-title">
+                Human Body
+            </div>
+
+            <div class="chapter-info">
+                Coming Soon
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- CHAPTER 03 -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CHAPTER 03
+            </div>
+
+            <div class="chapter-title">
+                Tissue
+            </div>
+
+            <div class="chapter-info">
+                Coming Soon
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- CHAPTER 04 -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CHAPTER 04
+            </div>
+
+            <div class="chapter-title">
+                Digestive System
+            </div>
+
+            <div class="chapter-info">
+                Coming Soon
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- STUDY MATERIAL -->
+
+    <div
+        id="studyMaterialSection"
+        class="study-material-list"
+        style="display: none;">
+
+
+        <a
+            href="#"
+            class="study-material-card">
+
+            <div class="study-material-number">
+                SM - 01
+            </div>
+
+            <div class="study-material-title">
+                Lecture Planner
+            </div>
+
+            <div class="study-material-info">
+                PDF
+            </div>
+
+            <div class="study-material-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="study-material-card">
+
+            <div class="study-material-number">
+                SM - 02
+            </div>
+
+            <div class="study-material-title">
+                Previous Year Questions
+            </div>
+
+            <div class="study-material-info">
+                Practice
+            </div>
+
+            <div class="study-material-arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function showChapters() {
+
+    const chapters =
+        document.getElementById("chaptersSection");
+
+    const studyMaterial =
+        document.getElementById("studyMaterialSection");
+
+    const chaptersBtn =
+        document.getElementById("chaptersBtn");
+
+    const studyMaterialBtn =
+        document.getElementById("studyMaterialBtn");
+
+
+    chapters.style.display = "flex";
+
+    studyMaterial.style.display = "none";
+
+    chaptersBtn.classList.add("active");
+
+    studyMaterialBtn.classList.remove("active");
+
+}
+
+
+function showStudyMaterial() {
+
+    const chapters =
+        document.getElementById("chaptersSection");
+
+    const studyMaterial =
+        document.getElementById("studyMaterialSection");
+
+    const chaptersBtn =
+        document.getElementById("chaptersBtn");
+
+    const studyMaterialBtn =
+        document.getElementById("studyMaterialBtn");
+
+
+    chapters.style.display = "none";
+
+    studyMaterial.style.display = "flex";
+
+    studyMaterialBtn.classList.add("active");
+
+    chaptersBtn.classList.remove("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

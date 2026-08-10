@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Use your existing CSS file -->
+    <link rel="stylesheet" href="../style.css">
+
+    <title>Life Science - Physics World</title>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================
+     HEADER
+     ========================== -->
+
+<header class="header">
+
+    <div class="logo">
+        Physics World
+    </div>
+
+
+    <nav class="menu">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="gnm-batch1.html">
+            GNM Batch 1
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==========================
+     LIFE SCIENCE PAGE
+     ========================== -->
+
+<section class="chapter-page">
+
+
+    <!-- ==========================
+         SUBJECT TITLE
+         ========================== -->
+
+    <div class="subject-header">
+
+        <div>
+
+            <h1>
+                Life Science (Biology)
+            </h1>
+
+            <p>
+                GNM Batch 1
+            </p>
+
+        </div>
+
+
+        <!--
+            You can add total lectures here later.
+            It is empty for now.
+        -->
+
+        <div class="course-count">
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         CHAPTERS / STUDY MATERIAL TABS
+         ========================== -->
+
+    <div class="chapter-tabs">
+
+
+        <!-- CHAPTERS BUTTON -->
+
+        <button
+            id="chaptersBtn"
+            class="chapter-tab active"
+            onclick="showChapters()">
+
+            Chapters
+
+        </button>
+
+
+
+        <!-- STUDY MATERIAL BUTTON -->
+
+        <button
+            id="studyMaterialBtn"
+            class="chapter-tab"
+            onclick="showStudyMaterial()">
+
+            Study Material
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ==========================
+         CHAPTERS SECTION
+         ========================== -->
+
+    <div
+        id="chaptersSection"
+        class="chapter-list">
+
+
+        <!-- ==========================
+             CHAPTER 01
+             ========================== -->
+
+        <a
+             href="life-science-ch01.html"
+             class="chapter-card">
+
+            <div class="chapter-number">
+                CH - 01
+            </div>
+
+            <div class="chapter-title">
+                CH 01 : Cell
+            </div>
+
+            <div class="chapter-info">
+
+                Lectures : 0/0
+                &nbsp;&nbsp;
+                DPP : 0/0
+
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </>
+
+
+
+        <!-- ==========================
+             CHAPTER 02
+             ========================== -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CH - 02
+            </div>
+
+            <div class="chapter-title">
+                CH 02 : Human Body
+            </div>
+
+            <div class="chapter-info">
+
+                Lectures : 0/0
+                &nbsp;&nbsp;
+                DPP : 0/0
+
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- ==========================
+             CHAPTER 03
+             ========================== -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CH - 03
+            </div>
+
+            <div class="chapter-title">
+                CH 03 : Tissue
+            </div>
+
+            <div class="chapter-info">
+
+                Lectures : 0/0
+                &nbsp;&nbsp;
+                DPP : 0/0
+
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- ==========================
+             CHAPTER 04
+             ========================== -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CH - 04
+            </div>
+
+            <div class="chapter-title">
+                CH 04 : Digestive System
+            </div>
+
+            <div class="chapter-info">
+
+                Lectures : 0/0
+                &nbsp;&nbsp;
+                DPP : 0/0
+
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- ==========================
+             CHAPTER 05
+             ========================== -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CH - 05
+            </div>
+
+            <div class="chapter-title">
+                CH 05 : Respiratory System
+            </div>
+
+            <div class="chapter-info">
+
+                Lectures : 0/0
+                &nbsp;&nbsp;
+                DPP : 0/0
+
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- ==========================
+             CHAPTER 06
+             ========================== -->
+
+        <a
+            href="#"
+            class="chapter-card">
+
+            <div class="chapter-number">
+                CH - 06
+            </div>
+
+            <div class="chapter-title">
+                CH 06 : Circulatory System
+            </div>
+
+            <div class="chapter-info">
+
+                Lectures : 0/0
+                &nbsp;&nbsp;
+                DPP : 0/0
+
+            </div>
+
+            <div class="chapter-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- ==========================
+         STUDY MATERIAL SECTION
+         ========================== -->
+
+    <!--
+        This section is hidden initially.
+        It will appear when the user clicks
+        "Study Material".
+    -->
+
+    <div
+        id="studyMaterialSection"
+        class="study-material-list"
+        style="display: none;">
+
+
+        <!-- ==========================
+             STUDY MATERIAL 01
+             ========================== -->
+
+        <a
+            href="#"
+            class="study-material-card">
+
+            <div class="study-material-number">
+                SM - 01
+            </div>
+
+            <div class="study-material-title">
+                Lecture Planner || (Only PDF)
+            </div>
+
+            <div class="study-material-info">
+                0 Note
+            </div>
+
+            <div class="study-material-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- ==========================
+             STUDY MATERIAL 02
+             ========================== -->
+
+        <a
+            href="#"
+            class="study-material-card">
+
+            <div class="study-material-number">
+                SM - 02
+            </div>
+
+            <div class="study-material-title">
+                GATE-O-PEDIA || (ONLY PDF)
+            </div>
+
+            <div class="study-material-info">
+                0 Note
+            </div>
+
+            <div class="study-material-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- ==========================
+             STUDY MATERIAL 03
+             ========================== -->
+
+        <a
+            href="#"
+            class="study-material-card">
+
+            <div class="study-material-number">
+                SM - 03
+            </div>
+
+            <div class="study-material-title">
+                PYQ Quiz
+            </div>
+
+            <div class="study-material-info">
+                0 DPP's
+            </div>
+
+            <div class="study-material-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================
+     JAVASCRIPT
+     ========================== -->
+
+<script>
+
+
+/* =================================
+   SHOW CHAPTERS
+   ================================= */
+
+function showChapters() {
+
+    /*
+       Find the Chapters section
+    */
+    const chapters =
+        document.getElementById("chaptersSection");
+
+
+    /*
+       Find the Study Material section
+    */
+    const studyMaterial =
+        document.getElementById("studyMaterialSection");
+
+
+    /*
+       Find Chapters button
+    */
+    const chaptersBtn =
+        document.getElementById("chaptersBtn");
+
+
+    /*
+       Find Study Material button
+    */
+    const studyMaterialBtn =
+        document.getElementById("studyMaterialBtn");
+
+
+    /*
+       Show Chapters
+    */
+    chapters.style.display = "flex";
+
+
+    /*
+       Hide Study Material
+    */
+    studyMaterial.style.display = "none";
+
+
+    /*
+       Make Chapters button active/blue
+    */
+    chaptersBtn.classList.add("active");
+
+
+    /*
+       Remove active/blue from Study Material
+    */
+    studyMaterialBtn.classList.remove("active");
+
+}
+
+
+
+/* =================================
+   SHOW STUDY MATERIAL
+   ================================= */
+
+function showStudyMaterial() {
+
+    /*
+       Find the Chapters section
+    */
+    const chapters =
+        document.getElementById("chaptersSection");
+
+
+    /*
+       Find the Study Material section
+    */
+    const studyMaterial =
+        document.getElementById("studyMaterialSection");
+
+
+    /*
+       Find Chapters button
+    */
+    const chaptersBtn =
+        document.getElementById("chaptersBtn");
+
+
+    /*
+       Find Study Material button
+    */
+    const studyMaterialBtn =
+        document.getElementById("studyMaterialBtn");
+
+
+    /*
+       Hide Chapters
+    */
+    chapters.style.display = "none";
+
+
+    /*
+       Show Study Material
+    */
+    studyMaterial.style.display = "flex";
+
+
+    /*
+       Make Study Material button active/blue
+    */
+    studyMaterialBtn.classList.add("active");
+
+
+    /*
+       Remove active/blue from Chapters
+    */
+    chaptersBtn.classList.remove("active");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
